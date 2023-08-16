@@ -1,1 +1,17 @@
+ /* import do padronizador de pagina */
 @import url(../vendor/normalize.css);
+
+ /* import das fonts usadas */
+@import url(../vendor/inter/inter.css);
+
+ /* import da pagina */
+@import url(../blocks/page.css);
+
+ /* import do estilo de header */
+@import url(../blocks/header.css);
+
+/* import do estilo de profile */
+@import url(../blocks/profile.css);
+
+/* import do estilo do botao de edicao */
+@import url(../blocks/button__edit.css);

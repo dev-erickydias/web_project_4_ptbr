@@ -1,36 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-    <!-- head -->
+<!-- head -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaScript Basico, introduzindo o DOM">
-    <meta name="keywords" content="HTML, CSS, JavaScript, DOM, Nojekyll">
-    <meta name="author" content="Ericky Dias">
-    <link rel="stylesheet" href="./src/pages/index.css">
-    <title>Around The US</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JavaScript Basico, introduzindo o DOM">
+  <meta name="keywords" content="HTML, CSS, JavaScript, DOM, Nojekyll">
+  <meta name="author" content="Ericky Dias">
+  <link rel="stylesheet" href="./src/pages/index.css">
+  <title>Around The US</title>
+  <style>
+    
+    </style>
 </head>
 
- <!-- Body -->
-<body>
+<!-- Body -->
 
-    <!-- header -->
-    <header>
+<body class="page">
 
-    </header>
+  <!-- header -->
+  <header class="header">
+    <img src="./src/image/Vector.svg" alt="" class="logo">
+  </header>
+
+  <!-- conteudo Principal -->
+  <main class="main">
 
     <!-- conteudo Principal -->
-    <main>
+    <section class="profile">
 
-    </main>
+      <div class="profile__container">
 
-    <!-- Rodapé -->
-    <footer>
+        <img src="./src/image/perfil.png" class="profile__image" alt="profile picture">
+        <div class="profile__titles">
+          <div class="profile__content">
+            <h1 class="title profile__title">Jacques Cousteau</h1>
+            <button class="button profile__button">
+              <img src="./src/image/Lapiz__icon.png" class="edit" alt="edit">
+            </button>
+          </div>
+          <h2 class="subtitle profile__subtitle">Explorar</h2>
+        </div>
+      </div>
+      <button class="button add" id="button__add">
+        <p class="add__text">+</p>
+      </button>
 
-    </footer>
+    </section>
 
-    <!-- Java Script -->
-    <script src="./src/pages/index.js"></script>
+    <form class="form__edit">
+
+      <fieldset class="form__itens">
+        <div class="form__close">
+          <img src="./src/image/Close__Icon.png" alt="">
+        </div>
+        <h2 class="form__title">Editar perfil</h2>
+        <div>
+          <label for="nome"></label>
+          <input type="text" name="nome" id="nome" placeholder="Jacques Cousteau" class="nome">
+        </div>
+        <div>
+          <label for="job"></label>
+          <input type="text" name="job" id="job" placeholder="Explorar" class="job">
+        </div>
+        <button id="submit__button" class="submit__button" type="submit">Salvar</button>
+      </fieldset>
+    </form>
+    <!-- conteudo Principal -->
+
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+
+  </footer>
+
+  <!-- Java Script -->
+  <script src="./src/pages/index.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,73 @@
+.form__edit {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+}
+.form__close {
+  width: 39px;
+  height: 39px;
+  background-color: #000;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.form__itens {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10% auto;
+}
+
+.form__title {
+  width: 330px;
+  height: 23px;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  text-align: left;
+  color: #000;
+  margin: 0 36px;
+}
+
+.nome {
+  width: 358px;
+  height: 27px;
+  border: none;
+  border-bottom: 1px solid #000;
+  margin: 54px 36px 0;
+}
+
+.job {
+  width: 358px;
+  height: 27px;
+  border: none;
+  border-bottom: 1px solid #000;
+  margin: 29px 36px 48px;
+}
+
+.submit__button {
+  width: 358px;
+  height: 50.1519775390625px;
+  border-radius: 2px;
+  background-color: #000;
+  color: #fff;
+  margin: 0 36px;
+}
+
+.submit__button:hover {
+  background-color: #333638;
+  width: 358px;
+  height: 50.15px;
+  border-radius: 2px;
+  cursor: pointer;
+}
