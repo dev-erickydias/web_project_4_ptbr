@@ -10,8 +10,13 @@ const inputJob = document.querySelector('.job');
 const formClose = document.querySelector('.form__close')
 const submitForm = document.querySelector('.submit__button')
 
+
+inputNome.value = 'Jacques Cousteau';
+inputJob.value = 'Explorar';
+
 profileButton.addEventListener('click', () => {
   profileForm.style.display = 'block';
+  inputNome.style.value = 'jack'
 });
 profileForm.addEventListener('submit', (event) => {
     event.preventDefault()
