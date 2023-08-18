@@ -2,9 +2,10 @@
   color: #000;
   list-style: none;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   justify-items: center;
+  margin: 0 auto;
   row-gap: 21px;
   column-gap: 17px;
   width: 880px;
