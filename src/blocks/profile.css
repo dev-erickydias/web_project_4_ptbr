@@ -9,17 +9,11 @@
   height: 120px;
   margin: 40px auto 50px;
 }
-.profile__container{
-display: grid;
-grid-column: 3;
-grid-row: 2;
-grid-template-areas: 
-'image title edit'
-'image subtitle .'
-;
+.profile__container {
+  display: flex;
 }
+
 .profile__image {
-  grid-area: 'image';
   height: 120px;
   width: 120px;
   margin: 0 30px 0 0;
@@ -29,7 +23,6 @@ grid-template-areas:
   flex-direction: column;
 }
 .profile__title {
-  grid-area: 'title';
   font-size: 42px;
   font-weight: 500;
   line-height: 48px;
@@ -37,54 +30,124 @@ grid-template-areas:
   margin: 0 18px 16px 0;
 }
 .profile__subtitle {
-  grid-area: 'subtitle';
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
   text-align: left;
   margin: 0;
 }
-
-
 .profile__content {
-display: flex;
-flex-direction: row;
-align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-
-
 .profile__button {
-  grid-area: 'edit';
   border: 2px solid #fff;
   width: 24px;
   height: 24px;
   background-color: #000;
   color: #fff;
-  align-items: center;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
-
 .add {
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   width: 150px;
   height: 50px;
   background-color: #000;
   color: #fff;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
+}
+.add__button {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
 }
 .add__text {
   width: 22px;
   height: 22px;
-  margin: 0 auto;
 }
-
-@media screen and (min-width: 20rem) and (max-width: 767px) {
+.add:hover {
+  opacity: 0.6;
+}
+@media (max-width: 320px) {
   .profile {
+    width: 282px;
+    height: 286px;
+    align-items: center;
+    justify-items: center;
+    margin: 42px 19px 0;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+  }
+  .profile__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .profile__titles {
+    align-items: center;
+    align-content: center;
+    margin: 30px 76px 14px 48px;
+  }
+  .profile__title {
+    width: 196px;
+    height: 22px;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: center;
+  }
+  .profile__subtitle {
+    width: 282px;
+    height: 14px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    text-align: center;
+  }
+
+  .form__itens {
+    width: 282px;
+    height: 322px;
+    margin: 123px 19px 0;
+  }
+  .form__close {
+    width: 39px;
+    height: 39px;
+    align-self: flex-end;
+    cursor: pointer;
+    position: absolute;
+    top: -45px;
+    right: -10px;
+  }
+  .submit__button {
+    width: 238px;
+    height: 46px;
+  }
+  .nome {
+    width: 238px;
+    height: 26px;
+  }
+  .job {
+    width: 238px;
+    height: 26px;
+  }
+  .add {
+    width: 282px;
+    height: 50px;
+    justify-items: center;
+    align-self: center;
+    margin: 36px 19px 0;
+    padding: 0;
+  }
+  .add__button {
+    margin: 0;
   }
 }
