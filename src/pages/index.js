@@ -1,3 +1,4 @@
+
 //Aqui é a Programação do Button de edição do perfil.
 
 //Parte de fazer o pupup abrir, alem de fazer tudo o que for editado ficar na tela.
@@ -16,6 +17,7 @@ inputJob.value = 'Explorar';
 
 profileButton.addEventListener('click', () => {
   profileForm.style.display = 'block';
+  profileFotm.style.overflow = 'hidden';
   inputNome.style.value = 'jack'
 });
 profileForm.addEventListener('submit', (event) => {
@@ -24,7 +26,7 @@ profileForm.addEventListener('submit', (event) => {
   profileSubtitle.textContent = inputJob.value;
 });
 
-// Aqui irei programar para ele fechar com click fora do pupup, no X e no submit 
+// Aqui irei programar para ele fechar com click no X e no submit 
 
 formClose.addEventListener('click', () => {
   profileForm.style.display = 'none'
