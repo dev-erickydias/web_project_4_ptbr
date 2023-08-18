@@ -16,6 +16,12 @@
 /* import do estilo do botao de edicao */
 @import url(../blocks/button__edit.css);
 
+/* import do estilo do formulario de edição */
+@import url(../blocks/form__edit.css);
+
+/* import do estilo do botao de add */
+@import url(../blocks/button__add.css);
+
 /* import do estilo dos Cards */
 @import url(../blocks/cards.css);
 

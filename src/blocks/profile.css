@@ -52,28 +52,21 @@
   justify-content: center;
   cursor: pointer;
 }
-.add {
-  border: 2px solid #fff;
-  width: 150px;
-  height: 50px;
-  background-color: #000;
-  color: #fff;
-  cursor: pointer;
+.form__edit {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
 }
-.add__button {
-  display: flex;
-  height: 50px;
-  align-items: center;
-  justify-items: center;
-  justify-content: center;
-}
-.add__text {
-  width: 22px;
-  height: 22px;
-}
-.add:hover {
+
+.profile__button:hover {
   opacity: 0.6;
 }
+
 @media (max-width: 320px) {
   .profile {
     width: 282px;
@@ -113,20 +106,6 @@
     text-align: center;
   }
 
-  .form__itens {
-    width: 282px;
-    height: 322px;
-    margin: 123px 19px 0;
-  }
-  .form__close {
-    width: 39px;
-    height: 39px;
-    align-self: flex-end;
-    cursor: pointer;
-    position: absolute;
-    top: -45px;
-    right: -10px;
-  }
   .submit__button {
     width: 238px;
     height: 46px;
@@ -139,15 +118,13 @@
     width: 238px;
     height: 26px;
   }
-  .add {
-    width: 282px;
-    height: 50px;
-    justify-items: center;
-    align-self: center;
-    margin: 36px 19px 0;
-    padding: 0;
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  .profile {
+    width: 500px;
+    height: 200px;
   }
-  .add__button {
-    margin: 0;
+  .profile__container {
+    margin-right: 30px;
   }
 }

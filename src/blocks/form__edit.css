@@ -1,0 +1,67 @@
+.form__close {
+  width: 39px;
+  height: 39px;
+  align-self: flex-end;
+  cursor: pointer;
+  position: absolute;
+  top: -40px;
+  right: -45px;
+}
+
+.form__itens {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10% auto;
+}
+
+.form__title {
+  width: 330px;
+  height: 23px;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  text-align: left;
+  color: #000;
+  margin: 0 36px;
+}
+
+.nome {
+  width: 358px;
+  height: 27px;
+  border: none;
+  border-bottom: 1px solid #000;
+  margin: 54px 36px 0;
+}
+
+.job {
+  width: 358px;
+  height: 27px;
+  border: none;
+  border-bottom: 1px solid #000;
+  margin: 29px 36px 48px;
+}
+
+
+@media (max-width: 320px) {
+  .form__itens {
+    width: 282px;
+    height: 322px;
+    margin: 123px 19px 0;
+  }
+  .form__close {
+    width: 39px;
+    height: 39px;
+    align-self: flex-end;
+    cursor: pointer;
+    position: absolute;
+    top: -45px;
+    right: -10px;
+  }
+}

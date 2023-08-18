@@ -7,6 +7,7 @@
   justify-items: center;
   row-gap: 21px;
   column-gap: 17px;
+  width: 880px;
 }
 
 .card {
@@ -51,6 +52,7 @@
     align-items: start;
     padding: 0;
     row-gap: 20px;
+    width: 310px;
   }
   .card {
     display: flex;
@@ -58,4 +60,22 @@
     margin: 0 19px;
   }
   
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    margin: 0 19px auto;
+    align-items: start;
+    padding: 0;
+    row-gap: 17px;
+    column-gap: 20px;
+    width: 500px;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
 }
