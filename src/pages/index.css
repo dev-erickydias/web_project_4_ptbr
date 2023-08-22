@@ -17,7 +17,7 @@
 @import url(../blocks/button.css);
 
 /* import do estilo do botao de edicao */
-@import url(../blocks/form__edit.css);
+@import url(../blocks/form.css);
 
 /* import do estilo dos Cards */
 @import url(../blocks/cards.css);

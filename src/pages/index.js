@@ -3,13 +3,13 @@
 
 //Parte de fazer o pupup abrir, alem de fazer tudo o que for editado ficar na tela.
 const profileButton = document.querySelector('.profile__button');
-const profileForm = document.querySelector('.form__edit');
+const profileForm = document.querySelector('.form');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
-const inputNome = document.querySelector('.nome');
-const inputJob = document.querySelector('.job');
+const inputNome = document.querySelector('.form__name');
+const inputJob = document.querySelector('.form__job');
 const formClose = document.querySelector('.form__close')
-const submitForm = document.querySelector('.submit__button')
+const submitForm = document.querySelector('.submit')
 
 
 inputNome.value = profileTitle.textContent;

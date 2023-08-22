@@ -9,3 +9,10 @@
     margin-left: 27px;
   }
 }
+@media (min-width: 320px) and (max-width: 768px) {
+  
+  .logo {
+    margin-left: 27px;
+  }
+
+}
