@@ -58,23 +58,46 @@
   margin: 29px 36px 48px;
 }
 
-
-@media (max-width: 320px) {
-  .form__itens {
+@media (max-width: 768px) {
+  .form {
     width: 282px;
     height: 322px;
-    margin: 123px 19px 0;
+    margin: 123px 19px;
   }
   .form__close {
-    width: 39px;
-    height: 39px;
-    align-self: flex-end;
-    cursor: pointer;
+    width: 26px;
+    height: 26px;
     position: absolute;
-    top: -45px;
-    right: -10px;
+    top: -40px;
+    right: 10px;
   }
-}
-@media (min-width: 320px) and (max-width: 768px) {
-
+  .form__itens {
+    width: 100%;
+  }
+  .form__title {
+    width: 238px;
+    height: 23px;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 21.78px;
+    text-align: left;
+    color: #000;
+    margin: 25px auto 0;
+  }
+  
+  .form__name {
+    width: 238px;
+    height: 26px;
+    border: none;
+    border-bottom: 1px solid #000;
+    margin: 54px 36px 0;
+  }
+  
+  .form__job {
+    width: 238px;
+    height: 26px;
+    border: none;
+    border-bottom: 1px solid #000;
+    margin: 29px 36px 0;
+  }
 }

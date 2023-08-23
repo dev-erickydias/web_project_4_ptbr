@@ -45,28 +45,14 @@
 .card__unlick:hover {
   opacity: 0.5;
 }
-@media (max-width: 320px) {
-  .cards {
-    display: grid;
+@media (max-width: 768px) {
+  .cards{
     grid-template-columns: 1fr;
-    align-items: start;
     row-gap: 20px;
-    width: 310px;
+    width: 282px;
+    margin: 0 auto;
   }
   .card {
-    display: flex;
-    flex-direction: column;
-    margin: 0 19px;
-  }
-  
-}
-@media (min-width: 320px) and (max-width: 768px) {
-  
-  .cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 27px;
-    width: 500px;
-    margin: 0 25% 25px;
+    margin: 0 35px 0 0;
   }
 }

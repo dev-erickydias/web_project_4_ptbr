@@ -3,11 +3,4 @@
     color: #fff;
     font-family: 'inter';
 }
-@media (min-width: 320px) and (max-width: 768px) {
-    .page {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-    }
-}
+

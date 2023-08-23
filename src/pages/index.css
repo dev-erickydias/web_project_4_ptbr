@@ -7,6 +7,9 @@
  /* import da pagina */
 @import url(../blocks/page.css);
 
+/* import do conteudo principal */
+@import url(../blocks/main.css);
+
  /* import do estilo de header */
 @import url(../blocks/header.css);
 

@@ -9,7 +9,7 @@ const profileSubtitle = document.querySelector('.profile__subtitle');
 const inputNome = document.querySelector('.form__name');
 const inputJob = document.querySelector('.form__job');
 const formClose = document.querySelector('.form__close')
-const submitForm = document.querySelector('.submit')
+const submitForm = document.querySelector('.button__submit')
 
 
 inputNome.value = profileTitle.textContent;

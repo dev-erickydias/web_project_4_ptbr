@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="JavaScript Basico, introduzindo o DOM">
   <meta name="keywords" content="HTML, CSS, JavaScript, DOM, Nojekyll">
   <meta name="author" content="Ericky Dias">
@@ -17,6 +17,7 @@
   <!-- header -->
   <header class="header">
     <img src="./src/image/Vector.svg" alt="logo around the us" class="header__logo">
+    <div class="header__line"></div>
   </header>
   <!-- conteudo Principal -->
   <main class="main">
@@ -34,7 +35,7 @@
           <h2 class="profile__subtitle">Explorar</h2>
         </div>
       </div>
-      <button class="button"><img src="./src/image/add__icon.png" alt="simbolo de adição" class="button__icon"></button>
+      <button class="button button__add"><img src="./src/image/add__icon.png" alt="simbolo de adição" class="button__icon"></button>
     </section>
     <!-- conteudo dos cards -->
     <ul class="cards">
@@ -82,15 +83,10 @@
           <img src="./src/image/Close__Icon.png" alt="Botão que feixa a caixa de edição">
         </div>
         <h2 class="form__title">Editar perfil</h2>
-        <div>
-          <label for="nome"></label>
           <input type="text" name="nome" id="nome" class="form__name" maxlength="20">
-        </div>
-        <div>
-          <label for="job"></label>
+
           <input type="text" name="job" id="job" class="form__job" maxlength="20">
-        </div>
-        <button id="button" class="submit" type="submit">Salvar</button>
+        <button id="button" class="button__submit" type="submit">Salvar</button>
       </fieldset>
     </form>
   </main>

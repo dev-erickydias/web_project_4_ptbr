@@ -1,35 +1,18 @@
-.submit {
-  width: 358px;
-  height: 50.1519775390625px;
-  border-radius: 2px;
-  background-color: #000;
-  color: #fff;
-  margin: 0 36px;
-}
-.submit:hover {
-  background-color: #333638;
-  width: 358px;
-  height: 50.15px;
-  border-radius: 2px;
-  cursor: pointer;
-}
-/*Aqui tem todo o estilo do botao add
-*/
 .button {
   border: 2px solid #fff;
   width: 150px;
   height: 50px;
   background-color: #000;
   color: #fff;
-  cursor: pointer;
+ 
   display: flex;
-  height: 50px;
   align-items: center;
   justify-items: center;
   justify-content: center;
 }
 .button:hover {
   opacity: 0.6;
+  cursor: pointer;
 }
 .button__icon {
   width: 22px;
@@ -38,18 +21,26 @@
 .profile__button:hover {
   opacity: 0.6;
 }
-@media (max-width: 320px) {
+.button__submit {
+  width: 358px;
+  height: 50.1519775390625px;
+  border-radius: 2px;
+  background-color: #000;
+  color: #fff;
+  margin: 0 36px;
+}
+.button__submit:hover {
+  background-color: #333638;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
   .button {
     width: 282px;
     height: 50px;
-    justify-items: center;
-    align-self: center;
-    margin: 36px 19px 0;
-    padding: 0;
   }
-}
-@media (min-width: 320px) and (max-width: 768px) {
-  .button {
-    margin: 0;
+  .button__submit {
+    width: 238px;
+    height: 46px;
+    margin: 46px auto 0;
   }
 }
