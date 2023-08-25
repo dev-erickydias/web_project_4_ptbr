@@ -3,27 +3,3 @@
     color: #fff;
     font-family: 'inter';
 }
-<<<<<<< HEAD
-=======
-
-<<<<<<< HEAD
-=======
-@media (min-width: 320px) {
-    .page {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-    }
-}
-
-@media (min-width: 320px) and (max-width: 768px) {
-    .page {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-    }
-}
->>>>>>> 5f9e1853fa322100f708383cfd12ef97142b5e61
->>>>>>> 7932a63487716275707f4bb2757844a55ad2fe5f
