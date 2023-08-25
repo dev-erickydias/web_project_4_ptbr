@@ -4,3 +4,23 @@
     font-family: 'inter';
 }
 
+<<<<<<< HEAD
+=======
+@media (min-width: 320px) {
+    .page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+    .page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+}
+>>>>>>> 5f9e1853fa322100f708383cfd12ef97142b5e61
