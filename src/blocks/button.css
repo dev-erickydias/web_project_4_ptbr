@@ -4,23 +4,21 @@
   height: 50px;
   background-color: #000;
   color: #fff;
- 
   display: flex;
   align-items: center;
   justify-items: center;
   justify-content: center;
 }
-.button:hover {
+.opacursor:hover {
   opacity: 0.6;
   cursor: pointer;
 }
+
 .button__icon {
   width: 22px;
   height: 22px;
 }
-.profile__button:hover {
-  opacity: 0.6;
-}
+
 .button__submit {
   width: 358px;
   height: 50.1519775390625px;

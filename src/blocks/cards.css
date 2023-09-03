@@ -18,6 +18,13 @@
   border-radius: 10px;
   position: relative;
 }
+.del {
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  width: 18px;
+  height: 19.3px;
+}
 .card__image {
   width: 282px;
   height: 282px;
@@ -40,10 +47,9 @@
   position: absolute;
   bottom: 25px;
   right: 15px;
-  cursor: pointer;
 }
 .card__unlick:hover {
-  opacity: 0.5;
+  cursor: pointer;
 }
 @media (max-width: 768px) {
   .cards{

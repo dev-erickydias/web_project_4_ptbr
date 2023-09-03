@@ -8,6 +8,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   margin: 0 auto;
 }
+
 .form__close {
   width: 39px;
   height: 39px;
@@ -60,6 +61,11 @@
 
 @media (max-width: 768px) {
   .form {
+    width: 282px;
+    height: 322px;
+    margin: 123px 19px;
+  }
+  .popup {
     width: 282px;
     height: 322px;
     margin: 123px 19px;

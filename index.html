@@ -28,71 +28,56 @@
         <div class="profile__titles">
           <div class="profile__content">
             <h1 class="profile__title">Jacques Cousteau</h1>
-            <button class="profile__button">
+            <button class="profile__button opacursor">
               <img src="./src/image/Lapiz__icon.png" class="edit" alt="icone de um lapiz">
             </button>
           </div>
           <h2 class="profile__subtitle">Explorar</h2>
         </div>
       </div>
-      <button class="button button__add"><img src="./src/image/add__icon.png" alt="simbolo de adição" class="button__icon"></button>
+      <button class="button button__add opacursor"><img src="./src/image/add__icon.png" alt="simbolo de adição" class="button__icon"></button>
     </section>
     <!-- conteudo dos cards -->
     <ul class="cards">
-      <li class="card">
-        <img class="card__image" src="./src/image/card__firt.jpg"
-          alt="Rio do vale de yosemite com muitas arvores ao redor e uma montanha ao fundo">
-        <h2 class="card__title">Vale de Yosemite</h2>
-        <img src="./src/image/unlike.png" alt="Coração para dar lick no post" class="card__unlick">
-      </li>
-      <li class="card">
-        <img class="card__image" src="./src/image/second.png"
-          alt="lago louise: lago gigante com duas montanhas em suas duas laterais">
-        <h2 class="card__title">Lago Louise</h2>
-        <img src="./src/image/unlike.png" alt="Coração para dar lick no post" class="card__unlick">
-      </li>
-      <li class="card">
-        <img class="card__image" src="./src/image/porDoSol.png" alt="por do sol visto por cima de uma montanha">
-        <h2 class="card__title">Montanhas Care...</h2>
-        <img src="./src/image/unlike.png" alt="Coração para dar lick no post" class="card__unlick">
-      </li>
-      <li class="card">
-        <img class="card__image" src="./src/image/montanhaDeNeve.png"
-          alt="montanhas do latemar, montanhas coberta parcialmente de neve e um céu estrelado logo ao fundo.">
-        <h2 class="card__title">Latemar</h2>
-        <img src="./src/image/unlike.png" alt="Coração para dar lick no post" class="card__unlick">
-      </li>
-      <li class="card">
-        <img class="card__image" src="./src/image/lago.png"
-          alt="lago de vanoise com montanhas ao redor coberta parcilmente por neve">
-        <h2 class="card__title">Vanoise Nationa...</h2>
-        <img src="./src/image/unlike.png" alt="Coração para dar lick no post" class="card__unlick">
-      </li>
-      <li class="card">
-        <img class="card__image" src="./src/image/neveLago.png"
-          alt="cabana e um barquinho no lago de braies, montanhas ao seu redos combertas por neve.">
-        <h2 class="card__title">Lago di Braies</h2>
-        <img src="./src/image/unlike.png" alt="Coração para dar lick no post" class="card__unlick">
-      </li>
+
     </ul>
     <!-- formulario de edicao do perfil -->
     <form class="form">
-
       <fieldset class="form__itens">
         <div class="form__close">
           <img src="./src/image/Close__Icon.png" alt="Botão que feixa a caixa de edição">
         </div>
-        <h2 class="form__title">Editar perfil</h2>
+        <h2 class="form__title">Editar Perfil</h2>
           <input type="text" name="nome" id="nome" class="form__name" maxlength="20">
-
           <input type="text" name="job" id="job" class="form__job" maxlength="20">
-        <button id="button" class="button__submit" type="submit">Salvar</button>
+        <button id="button__submit" class="button__submit" type="submit">Salvar</button>
+      </fieldset>
+    </form>
+    <form class="form" id="formulario">
+      <fieldset class="form__itens">
+        <div class="form__close">
+          <img src="./src/image/Close__Icon.png" alt="Botão que feixa a caixa de edição">
+        </div>
+        <h2 class="form__title">Novo Local</h2>
+          <input type="text" name="nome" id="input__name" class="form__name add__title" maxlength="20" placeholder="Titulo">
+          <input type="text" name="image" id="input__image" class="form__job add__image" placeholder="Link de imagem">
+        <button id="add__submit" class="button__submit" type="submit">Salvar</button>
       </fieldset>
     </form>
   </main>
+
+  <template id="template">
+    <li class="card">
+      <img class="del opacursor" src="./src/image/lixeira.png">
+      <img class="card__image" src="" alt="">
+      <h2 class="card__title"></h2>
+      <img src="./src/image/liked.png" alt="" class="card__unlick">
+    </li>
+  </template>
+
   <!-- Rodapé -->
   <footer class="footer">
-    <p class="footer__text">© 2023 Ericky Dias</p>
+    <p class="footer__text">&copy; 2023 Ericky Dias</p>
   </footer>
   <!-- Java Script -->
   <script src="./src/pages/index.js"></script>
