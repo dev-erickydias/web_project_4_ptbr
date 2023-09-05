@@ -1,14 +1,35 @@
-.form {
-  display: none;
+.popup {
+  display: flex;
+  flex-direction: column;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
   margin: 0 auto;
+  opacity: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  visibility: hidden;
+  transition: visibility 0.1s, opacity 0.5s linear;
 }
-
+.popup_opened {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  visibility: visible;
+}
+.popup_container {
+  position: relative;
+}
+.popup_opened .card__image {
+  width: auto;
+  height: auto;
+  max-height: 75vh;
+  max-width: 75vw;
+}
 .form__close {
   width: 39px;
   height: 39px;
@@ -18,7 +39,14 @@
   top: -40px;
   right: -45px;
 }
-
+.close_image {
+  width: 39px;
+  height: 39px;
+  position: absolute;
+  top: -40px;
+  right: -420px;
+  cursor: pointer;
+}
 .form__itens {
   position: relative;
   background-color: #fff;
@@ -60,16 +88,6 @@
 }
 
 @media (max-width: 768px) {
-  .form {
-    width: 282px;
-    height: 322px;
-    margin: 123px 19px;
-  }
-  .popup {
-    width: 282px;
-    height: 322px;
-    margin: 123px 19px;
-  }
   .form__close {
     width: 26px;
     height: 26px;
@@ -78,7 +96,8 @@
     right: 10px;
   }
   .form__itens {
-    width: 100%;
+    width: 350px;
+    margin: 150px auto 0;
   }
   .form__title {
     width: 238px;

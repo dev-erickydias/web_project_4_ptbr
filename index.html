@@ -13,6 +13,7 @@
 </head>
 
 <!-- Body -->
+
 <body class="page">
   <!-- header -->
   <header class="header">
@@ -35,43 +36,56 @@
           <h2 class="profile__subtitle">Explorar</h2>
         </div>
       </div>
-      <button class="button button__add opacursor"><img src="./src/image/add__icon.png" alt="simbolo de adição" class="button__icon"></button>
+      <button class="button button__add opacursor"><img src="./src/image/add__icon.png" alt="simbolo de adição"
+          class="button__icon"></button>
     </section>
     <!-- conteudo dos cards -->
     <ul class="cards">
-
     </ul>
+    <div class="popup__image"></div>
     <!-- formulario de edicao do perfil -->
-    <form class="form">
-      <fieldset class="form__itens">
-        <div class="form__close">
-          <img src="./src/image/Close__Icon.png" alt="Botão que feixa a caixa de edição">
-        </div>
-        <h2 class="form__title">Editar Perfil</h2>
+    <div class="popup" id="popup-user-form">
+      <form>
+        <fildset class="form__itens">
+          <div class="form__close">
+            <img src="./src/image/Close__Icon.png" alt="Botão que feixa a caixa de edição">
+          </div>
+          <h2 class="form__title">Editar Perfil</h2>
           <input type="text" name="nome" id="nome" class="form__name" maxlength="20">
           <input type="text" name="job" id="job" class="form__job" maxlength="20">
-        <button id="button__submit" class="button__submit" type="submit">Salvar</button>
-      </fieldset>
-    </form>
-    <form class="form" id="formulario">
-      <fieldset class="form__itens">
-        <div class="form__close">
+          <button id="button__submit" class="button__submit" type="submit">Salvar</button>
+        </fildset>
+      </form>
+    </div>
+    <div class="popup" id="popup-card-form">
+      <form>
+        <fildset class="form__itens" id="form__itens">
+          <div class="form__close">
+            <img src="./src/image/Close__Icon.png" alt="Botão que feixa a caixa de edição">
+          </div>
+          <h2 class="form__title">Novo Local</h2>
+          <input type="text" name="nome" id="input__name" class="form__name add__title" maxlength="20"
+            placeholder="Titulo">
+          <input type="text" name="image" id="input__image" class="form__job add__image" placeholder="Link de imagem">
+          <button id="add__submit" class="button__submit" type="submit">Salvar</button>
+        </fildset>
+      </form>
+    </div>
+    <div class="popup" id="popup-image">
+      <div class="popup_container">
+        <div class="close_image">
           <img src="./src/image/Close__Icon.png" alt="Botão que feixa a caixa de edição">
         </div>
-        <h2 class="form__title">Novo Local</h2>
-          <input type="text" name="nome" id="input__name" class="form__name add__title" maxlength="20" placeholder="Titulo">
-          <input type="text" name="image" id="input__image" class="form__job add__image" placeholder="Link de imagem">
-        <button id="add__submit" class="button__submit" type="submit">Salvar</button>
-      </fieldset>
-    </form>
+      </div>
+    </div>
   </main>
 
   <template id="template">
     <li class="card">
       <img class="del opacursor" src="./src/image/lixeira.png">
-      <img class="card__image" src="" alt="">
+      <img class="card__image" id="card__image" src="" alt="">
       <h2 class="card__title"></h2>
-      <img src="./src/image/liked.png" alt="" class="card__unlick">
+      <img class="card__unlick" src="./src/image/unlike.png" alt="lick">
     </li>
   </template>
 
@@ -84,4 +98,3 @@
 </body>
 
 </html>
-<!-- O designer que esta no figma não nos foi apresentada a responsividade para tablet -->
