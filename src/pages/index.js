@@ -84,10 +84,11 @@ function createCard(card) {
   const cardList = cardElement.querySelector(".card");
   cards.append(cardList);
 
-  cardList.addEventListener('click', () => {
+  cardImage.addEventListener('click', (event) => {
     popupImage.classList.add('popup_opened')
     popupImage.querySelector('.card__image')?.remove()
     popupImage.append(cardImage.cloneNode(true))
+    
   })
 }
 
