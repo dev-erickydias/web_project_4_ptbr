@@ -3,17 +3,17 @@
 //Parte de fazer o pupup abrir, alem de fazer tudo o que for editado ficar na tela.
 const profileButton = document.querySelector(".profile__button");
 const popupUserForm = document.querySelector("#popup-user-form");
-const formEdit = document.querySelector('.form_itens')
-const formAdd = document.querySelector('#form__itens')
+const formEdit = document.querySelector(".popup__form-itens");
+const formAdd = document.querySelector("#form__itens");
 const profileTitle = document.querySelector(".profile__title");
 const profileSubtitle = document.querySelector(".profile__subtitle");
-const inputNome = document.querySelector(".form__name");
-const inputJob = document.querySelector(".form__job");
-const formClose = document.querySelector(".form__close");
-const submitForm = document.querySelector(".button__submit");
-const addButton = document.querySelector(".button_add");
+const inputNome = document.querySelector(".popup__form-name");
+const inputJob = document.querySelector(".popup__form-job");
+const formClose = document.querySelector(".popup__form-close");
+const submitForm = document.querySelector("#button__submit");
+const addButton = document.querySelector(".profile__button-add");
 const popupCardForm = document.querySelector("#popup-card-form");
-const addClose = popupCardForm.querySelector(".form__close");
+const addClose = popupCardForm.querySelector("#close-add");
 const addInputName = popupCardForm.querySelector("#input__name");
 const addInputImage = popupCardForm.querySelector("#input__image");
 const addSubmit = popupCardForm.querySelector("#add__submit");
@@ -23,8 +23,8 @@ const cards = document.querySelector(".cards");
 const cardName = cardElement.querySelector(".card__title");
 const cardImage = cardElement.querySelector("#card__image");
 const cardUnlick = cardElement.querySelector(".card__unlick");
-const popupImage = document.querySelector('#popup-image')
-const imgClose = popupImage.querySelector('.close_image')
+const popupImage = document.querySelector("#popup-image");
+const imgClose = popupImage.querySelector(".close-image");
 // array com os cards que serão adicionados a ul
 const initialCards = [
   {
@@ -58,15 +58,13 @@ inputJob.value = profileSubtitle.textContent;
 
 // evento de click no botao de editar o perfil
 profileButton.addEventListener("click", () => {
-  popupUserForm.classList.add('popup_opened')
+  popupUserForm.classList.add("popup_opened");
 });
 
 // evento de click no botao de adicionar
 addButton.addEventListener("click", () => {
-  popupCardForm.classList.add('popup_opened')
+  popupCardForm.classList.add("popup_opened");
 });
-
-
 
 // função de crear cards
 function createCard(card) {
@@ -79,19 +77,16 @@ function createCard(card) {
   cardName.textContent = card.name;
   cardImage.src = card.link;
   cardImage.alt = card.name;
-  
 
   const cardList = cardElement.querySelector(".card");
   cards.append(cardList);
 
-  cardImage.addEventListener('click', (event) => {
-    popupImage.classList.add('popup_opened')
-    popupImage.querySelector('.card__image')?.remove()
-    popupImage.append(cardImage.cloneNode(true))
-    
-  })
+  cardImage.addEventListener("click", (event) => {
+    popupImage.classList.add("popup_opened");
+    popupImage.querySelector(".card__image")?.remove();
+    popupImage.append(cardImage.cloneNode(true));
+  });
 }
-
 
 // evento de submit no botão de salvar o formulario
 popupUserForm.addEventListener("submit", (event) => {
@@ -106,35 +101,34 @@ popupCardForm.addEventListener("submit", (event) => {
   const cardsitem = {
     name: addInputName.value,
     link: addInputImage.value,
-  }
-  createCard(cardsitem)
-  
-  addInputName.value = ''
-  addInputImage.value = ''
+  };
+  createCard(cardsitem);
+
+  addInputName.value = "";
+  addInputImage.value = "";
 });
 
 // Aqui irei programar para ele fechar com click no X e no submit do botao add e do botão edit
 formClose.addEventListener("click", () => {
-  popupUserForm.classList.remove('popup_opened')
+  popupUserForm.classList.remove("popup_opened");
 });
 submitForm.addEventListener("click", () => {
-  popupUserForm.classList.remove('popup_opened')
+  popupUserForm.classList.remove("popup_opened");
 });
 addClose.addEventListener("click", () => {
-  popupCardForm.classList.remove('popup_opened')
+  popupCardForm.classList.remove("popup_opened");
 });
 addSubmit.addEventListener("click", () => {
-  popupCardForm.classList.remove('popup_opened')
-});  
-
-imgClose.addEventListener("click", () => {
-  popupImage.classList.remove('popup_opened')
+  popupCardForm.classList.remove("popup_opened");
 });
 
+imgClose.addEventListener("click", () => {
+  popupImage.classList.remove("popup_opened");
+});
 
-window.addEventListener('load', () => {
+window.addEventListener("load", () => {
   initialCards.forEach(createCard);
-})
+});
 
 // adicionando a funcao de remover os card
 function removeCardElement(event) {
@@ -158,12 +152,11 @@ cards.addEventListener("click", (event) => {
     const isLiked = cardUnlick.getAttribute("data-liked") === "true";
 
     if (isLiked) {
-      cardUnlick.src = "./src/image/unlike.png"; // Alteração da imagem para "não curtir"
+      cardUnlick.src = "./image/unlike.png"; // Alteração da imagem para "não curtir"
       cardUnlick.setAttribute("data-liked", "false");
     } else {
-      cardUnlick.src = "./src/image/liked.png"; // Alteração da imagem para "curtir"
+      cardUnlick.src = "./image/liked.png"; // Alteração da imagem para "curtir"
       cardUnlick.setAttribute("data-liked", "true");
     }
   }
 });
-

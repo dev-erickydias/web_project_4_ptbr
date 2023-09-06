@@ -19,7 +19,7 @@
   height: 22px;
 }
 
-.button__submit {
+.button-submit {
   width: 358px;
   height: 50.1519775390625px;
   border-radius: 2px;
@@ -27,7 +27,7 @@
   color: #fff;
   margin: 0 36px;
 }
-.button__submit:hover {
+.button-submit:hover {
   background-color: #333638;
   cursor: pointer;
 }
