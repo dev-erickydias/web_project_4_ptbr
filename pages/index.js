@@ -3,7 +3,7 @@
 //Parte de fazer o pupup abrir, alem de fazer tudo o que for editado ficar na tela.
 const profileButton = document.querySelector(".profile__button");
 const popupUserForm = document.querySelector("#popup-user-form");
-const formEdit = document.querySelector('.form__itens')
+const formEdit = document.querySelector('.form_itens')
 const formAdd = document.querySelector('#form__itens')
 const profileTitle = document.querySelector(".profile__title");
 const profileSubtitle = document.querySelector(".profile__subtitle");
@@ -11,7 +11,7 @@ const inputNome = document.querySelector(".form__name");
 const inputJob = document.querySelector(".form__job");
 const formClose = document.querySelector(".form__close");
 const submitForm = document.querySelector(".button__submit");
-const addButton = document.querySelector(".button__add");
+const addButton = document.querySelector(".button_add");
 const popupCardForm = document.querySelector("#popup-card-form");
 const addClose = popupCardForm.querySelector(".form__close");
 const addInputName = popupCardForm.querySelector("#input__name");
