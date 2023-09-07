@@ -17,12 +17,7 @@ const addClose = popupCardForm.querySelector("#close-add");
 const addInputName = popupCardForm.querySelector("#input__name");
 const addInputImage = popupCardForm.querySelector("#input__image");
 const addSubmit = popupCardForm.querySelector("#add__submit");
-const cardTemplate = document.querySelector("#template");
-const cardElement = cardTemplate.content.cloneNode(true);
 const cards = document.querySelector(".cards");
-const cardName = cardElement.querySelector(".card__title");
-const cardImage = cardElement.querySelector("#card__image");
-const cardUnlick = cardElement.querySelector(".card__unlick");
 const popupImage = document.querySelector("#popup-image");
 const imgClose = popupImage.querySelector(".close-image");
 // array com os cards que serão adicionados a ul
