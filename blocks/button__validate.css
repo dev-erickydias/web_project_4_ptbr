@@ -1,0 +1,9 @@
+.popup__form-name.active {
+    border-color: red;
+  }
+  .button.button.button-submit.active:disabled {
+    background: #ccc;
+  }
+  .button.button-submit:disabled{
+    background: #ccc;
+  }

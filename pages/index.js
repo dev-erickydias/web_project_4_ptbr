@@ -20,7 +20,49 @@ const addSubmit = popupCardForm.querySelector("#add__submit");
 const cards = document.querySelector(".cards");
 const popupImage = document.querySelector("#popup-image");
 const imgClose = popupImage.querySelector(".close-image");
-// array com os cards que serão adicionados a ul
+// array com os cards que serão adicionados a ul7
+
+function desativarButton () {
+  submitForm.disabled=true
+  addSubmit.disabled=true
+}
+desativarButton()
+
+function validar (){
+  return inputNome.classList.add("active")
+
+}
+function validarRemove (){
+  return inputNome.classList.remove("active")
+
+}
+function pegarValor (event) {
+  if (event.target.value.length >= 2 && event.target.value.length <= 40) {
+   // return true
+   submitForm.disabled=false
+   return validarRemove() 
+  } else {
+    //return false
+    submitForm.disabled=true
+    return validar() 
+  }
+}
+
+
+inputNome.addEventListener("input", pegarValor)
+
+function fecharModal() {
+  const formFirst = document.querySelector("#first")
+  formFirst.classList.remove("popup_opened");
+  console.log(formFirst)
+}
+
+window.addEventListener("click", event => {
+  if (event.target == formEdit) {
+    fecharModal()
+  }
+})
+
 const initialCards = [
   {
     name: "Vale de Yosemite",

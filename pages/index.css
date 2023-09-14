@@ -20,6 +20,7 @@
 
 /* import do estilo do botao de edicao */
 @import url(../blocks/button.css);
+@import url(../blocks/button__validate.css);
 
 /* import do estilo do botao de edicao */
 @import url(../blocks/form.css);
