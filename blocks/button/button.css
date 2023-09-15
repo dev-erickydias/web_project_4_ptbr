@@ -9,28 +9,6 @@
   justify-items: center;
   justify-content: center;
 }
-.opacursor:hover {
-  opacity: 0.6;
-  cursor: pointer;
-}
-
-.button__icon {
-  width: 22px;
-  height: 22px;
-}
-
-.button-submit {
-  width: 358px;
-  height: 50.1519775390625px;
-  border-radius: 2px;
-  background-color: #000;
-  color: #fff;
-  margin: 0 36px;
-}
-.button-submit:hover {
-  background-color: #333638;
-  cursor: pointer;
-}
 @media (max-width: 768px) {
   .button {
     width: 282px;

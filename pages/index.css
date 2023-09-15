@@ -29,3 +29,13 @@
 @import url(../blocks/cards.css);
 
 @import url(../blocks/footer.css);
+
+
+
+/* aqui vou começar a importar os elementos da metodologia bem do geito que eu sei de verdade */
+
+/* importes dos buttons da pagina */
+@import url(../blocks/button/button.css);
+@import url(../blocks/button/button__icon.css);
+@import url(../blocks/button/button__submit.css);
+@import url(../blocks/button/opacursor.css);
