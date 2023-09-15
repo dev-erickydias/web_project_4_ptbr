@@ -17,7 +17,6 @@
   }
   .popup_opened {
     opacity: 1;
-    background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
     visibility: visible;
   }
@@ -29,4 +28,10 @@
     height: auto;
     max-height: 75vh;
     max-width: 75vw;
+  }
+  .overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
   }
