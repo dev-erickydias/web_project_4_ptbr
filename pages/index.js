@@ -22,6 +22,7 @@ const popupImage = document.querySelector("#popup-image");
 const imgClose = popupImage.querySelector(".close-image");
 const overlay = document.querySelector(".overlay")
 const overlayAdd = document.querySelector("#overlay-add")
+const overlayImage = document.querySelector("#overlay-image")
 const addFormFirst = document.querySelector("#first")
 // array com os cards que serão adicionados a ul7
 
@@ -182,5 +183,6 @@ overlay.addEventListener("click", ()=> {
 overlayAdd.addEventListener("click", ()=> {
   popupCardForm.classList.remove("popup_opened");
 })
-
-//
+overlayImage.addEventListener("click", () => {
+  popupImage.classList.remove("popup_opened");
+})

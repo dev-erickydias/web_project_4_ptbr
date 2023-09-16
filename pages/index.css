@@ -1,44 +1,71 @@
- /* import do padronizador de pagina */
+/* ==================================== import do estilo de header ========================================= */
 @import url(../vendor/normalize.css);
 
- /* import das fonts usadas */
+/* ==================================== import do estilo de header ========================================= */
 @import url(../vendor/inter/inter.css);
 
- /* import da pagina */
-@import url(../blocks/page.css);
+/* ==================================== import do estilo de header ========================================= */
+@import url(../blocks/page/page.css);
 
-/* import do conteudo principal */
-@import url(../blocks/main.css);
+/* ==================================== import do estilo de header ========================================= */
+@import url(../blocks/main/main.css);
 
- /* import do estilo de header */
-@import url(../blocks/header.css);
-  
-
-@import url(../blocks/popup.css);
-/* import do estilo de profile */
-@import url(../blocks/profile.css);
+/* ==================================== import do estilo de header ========================================= */
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo/logo.css);
 
 
-/* import do estilo do botao de edicao */
-@import url(../blocks/form.css);
+/* ==================================== import do estilo dos popup ========================================= */
+@import url(../blocks/popups/popup.css);
+@import url(../blocks/popups/__opened/opened.css);
+@import url(../blocks/popups/__container/container.css);
 
 
-@import url(../blocks/footer.css);
+/* ==================================== import do estilo dos formularios ========================================= */
+@import url(../blocks/forms/__close/close.css);
+@import url(../blocks/forms/__image/image.css);
+@import url(../blocks/forms/__itens/itens.css);
+@import url(../blocks/forms/__title/title.css);
+@import url(../blocks/forms/__name/name.css);
+@import url(../blocks/forms/__job/job.css);
 
 
 
-/* aqui vou começar a importar os elementos da metodologia bem do geito que eu sei de verdade */
 
-/* importes dos buttons da pagina */
+/* ==================================== import do estilo de profile ========================================= */
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__container/container.css);
+@import url(../blocks/profile/__content/content.css);
+@import url(../blocks/profile/__image/image.css);
+@import url(../blocks/profile/__titles/titles.css);
+@import url(../blocks/profile/__title/title.css);
+@import url(../blocks/profile/__subtitle/subtitle.css);
+
 @import url(../blocks/button/button.css);
-@import url(../blocks/button/button__icon.css);
-@import url(../blocks/button/button__submit.css);
-@import url(../blocks/button/opacursor.css);
+@import url(../blocks/button/__profile/profile.css);
+@import url(../blocks/button/__submit/submit.css);
+@import url(../blocks/button/__icon/icon.css);
 
-/* importes dos cards da pagina */
+
+
+
+/* ==================================== import do estilo de cards ========================================= */
 @import url(../blocks/cards/cards.css);
-@import url(../blocks/cards/__card.css);
-@import url(../blocks/cards/__del.css);
-@import url(../blocks/cards/__image.css);
-@import url(../blocks/cards/__title.css);
-@import url(../blocks/cards/__unlick.css);
+@import url(../blocks/cards/__card/card.css);
+@import url(../blocks/cards/__del/del.css);
+@import url(../blocks/cards/__image/image.css);
+@import url(../blocks/cards/__title/title.css);
+@import url(../blocks/cards/__unlick/unlick.css);
+
+
+/* ==================================== import do estilo de Footer ========================================= */
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__text/text.css);
+
+
+/* ==================================== divisoes de padroes ========================================= */
+@import url(../blocks/opacursor/opacursor.css);
+@import url(../blocks/orverlay/overlay.css);
+
+
+

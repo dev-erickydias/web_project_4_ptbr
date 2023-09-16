@@ -1,0 +1,18 @@
+.popup__form-itens {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10% auto;
+}
+@media (max-width: 768px) {
+  .popup__form-itens {
+    width: 350px;
+    margin: 150px auto 0;
+  }
+}

@@ -1,0 +1,16 @@
+.popup__form-name {
+  width: 358px;
+  height: 27px;
+  border: none;
+  border-bottom: 1px solid #000;
+  margin: 54px 36px 0;
+}
+@media (max-width: 768px) {
+  .popup__form-name {
+    width: 238px;
+    height: 26px;
+    border: none;
+    border-bottom: 1px solid #000;
+    margin: 54px 36px 0;
+  }
+}

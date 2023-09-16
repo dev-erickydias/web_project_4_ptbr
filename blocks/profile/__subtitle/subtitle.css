@@ -1,0 +1,26 @@
+.profile__subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: left;
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .profile__subtitle {
+    width: 282px;
+    height: 14px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    text-align: center;
+    padding-bottom: 14px;
+    padding-left: 25px;
+  }
+  .job {
+    width: 238px;
+    height: 26px;
+  }
+}

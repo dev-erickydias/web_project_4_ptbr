@@ -16,4 +16,8 @@
     height: 46px;
     margin: 46px auto 0;
   }
+  .submit__button {
+    width: 238px;
+    height: 46px;
+  }
 }

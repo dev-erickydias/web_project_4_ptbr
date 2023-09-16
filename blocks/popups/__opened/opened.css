@@ -1,0 +1,11 @@
+.popup_opened {
+  opacity: 1;
+  z-index: 999;
+  visibility: visible;
+}
+.popup_opened .card__image {
+  width: auto;
+  height: auto;
+  max-height: 75vh;
+  max-width: 75vw;
+}

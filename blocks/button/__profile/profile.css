@@ -1,0 +1,10 @@
+.profile__button {
+  border: 2px solid #fff;
+  width: 24px;
+  height: 24px;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

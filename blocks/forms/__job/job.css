@@ -1,0 +1,16 @@
+.popup__form-job {
+  width: 358px;
+  height: 27px;
+  border: none;
+  border-bottom: 1px solid #000;
+  margin: 29px 36px 48px;
+}
+@media (max-width: 768px) {
+  .popup__form-job {
+    width: 238px;
+    height: 26px;
+    border: none;
+    border-bottom: 1px solid #000;
+    margin: 29px 36px 0;
+  }
+}

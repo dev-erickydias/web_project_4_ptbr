@@ -18,7 +18,6 @@
   <!-- header -->
   <header class="header">
     <img src="./image/Vector.svg" alt="logo around the us" class="header__logo">
-    <div class="header__line"></div>
   </header>
   <!-- conteudo Principal -->
   <main class="main">
@@ -36,27 +35,30 @@
           <h2 class="profile__subtitle">Explorar</h2>
         </div>
       </div>
-      <button class="button profile__button-add opacursor"><img src="./image/add__icon.png" alt="simbolo de adição"
-          class="button__icon"></button>
+      <button class="button profile__button-add opacursor">
+        <img src="./image/add__icon.png" alt="simbolo de adição" class="button__icon">
+      </button>
     </section>
 
 
     <!-- conteudo dos cards -->
     <ul class="cards">
     </ul>
+
+
     <div class="popup-image"></div>
     <!-- formulario de edicao do perfil -->
     <div class="popup" id="popup-user-form">
       <div class="overlay"></div>
-      <form novalidate>
+      <form>
         <div class="popup__form-itens">
           <div class="popup__form-close">
             <img src="./image/Close__Icon.png" alt="Botão que feixa a caixa de edição">
           </div>
           <h2 class="popup__form-title">Editar Perfil</h2>
-          <input type="text" name="nome" id="nome" class="popup__form-name">
-          <input type="text" name="job" id="job" class="popup__form-job" maxlength="20">
-          <button id="button__submit" class="button button button-submit" type="submit">Salvar</button>
+          <input novalidate required type="text"  minlength="2" maxlength="40" name="nome" id="nome" class="popup__form-name">
+          <input novalidate required type="text" name="job" id="job" class="popup__form-job" minlength="2" maxlength="200">
+          <button id="button__submit" class="button button-submit" type="submit">Salvar</button>
         </div>
       </form>
     </div>
@@ -68,15 +70,17 @@
             <img src="./image/Close__Icon.png" alt="Botão que feixa a caixa de edição">
           </div>
           <h2 class="popup__form-title">Novo Local</h2>
-          <input type="text" novalidate minlength="2"  name="nome" id="input__name" class="popup__form-name add-title " maxlength="41"
+          <input type="text" novalidate required minlength="2"  name="nome" id="input__name" class="popup__form-name add-title " maxlength="41"
             placeholder="Titulo">
-          <input type="text" novalidate name="image" id="input__image" class="popup__form-job add-image" type="url" placeholder="Link de imagem">
+          <input type="text" novalidate required name="image" id="input__image" class="popup__form-job add-image" type="url" placeholder="Link de imagem">
           <button id="add__submit" class="button button-submit" type="submit">Salvar</button>
         </div>
       </form>
     </div>
     <div class="popup" id="popup-image">
+      <div class="overlay" id="overlay-image"></div>
       <div class="popup-container">
+        
         <div class="close-image">
           <img src="./image/Close__Icon.png" alt="Botão que feixa a caixa de edição">
         </div>
@@ -93,6 +97,10 @@
     </li>
   </template>
 
+  <template id="overlay">
+    <div class="overlay" id="popup-image">
+    </div>
+  </template>
   <!-- Rodapé -->
   <footer class="footer">
     <p class="footer__text">&copy; 2023 Ericky Dias</p>

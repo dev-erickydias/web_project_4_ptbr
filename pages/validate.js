@@ -1,7 +1,6 @@
 // Função para desativar os Botões
 function desativarButton() {
   submitForm.disabled = true;
-  addSubmit.disabled = true;
 }
 desativarButton();
 
@@ -35,12 +34,3 @@ inputJob.addEventListener("input", pegarValor);
 // addInputName e addInputImagem
 
 // so preciso checar se tem http e https 
-function validarAdd(event) {
-  if ((addInputName.value.length >= 2 && addInputName.value.length <= 30) && (addInputImage.value == URL)) {
-    addSubmit.disabled = false;
-  } else {
-    addSubmit.disabled = true;
-  }
-}
-
-addInputImage.addEventListener("input", validarAdd)

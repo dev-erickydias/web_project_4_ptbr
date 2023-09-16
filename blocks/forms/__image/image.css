@@ -1,0 +1,8 @@
+.close-image {
+    width: 39px;
+    height: 39px;
+    position: absolute;
+    top: 55px;
+    right: 350px;
+    cursor: pointer;
+  }
