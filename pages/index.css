@@ -18,15 +18,10 @@
 /* import do estilo de profile */
 @import url(../blocks/profile.css);
 
-/* import do estilo do botao de edicao */
-@import url(../blocks/button.css);
-@import url(../blocks/button__validate.css);
 
 /* import do estilo do botao de edicao */
 @import url(../blocks/form.css);
 
-/* import do estilo dos Cards */
-@import url(../blocks/cards.css);
 
 @import url(../blocks/footer.css);
 
@@ -39,3 +34,11 @@
 @import url(../blocks/button/button__icon.css);
 @import url(../blocks/button/button__submit.css);
 @import url(../blocks/button/opacursor.css);
+
+/* importes dos cards da pagina */
+@import url(../blocks/cards/cards.css);
+@import url(../blocks/cards/__card.css);
+@import url(../blocks/cards/__del.css);
+@import url(../blocks/cards/__image.css);
+@import url(../blocks/cards/__title.css);
+@import url(../blocks/cards/__unlick.css);

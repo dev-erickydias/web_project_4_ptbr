@@ -1,0 +1,17 @@
+.card__image {
+  width: 282px;
+  height: 282px;
+  border-radius: 10px 10px 0px 0px;
+}
+.card__image_popup {
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  max-height: 75vh;
+  max-width: 75vh;
+  margin: -90px auto 90px;
+  opacity: 1;
+  visibility: visible;
+  transition: visibility 1s, opacity 1s linear;
+  z-index: 999;
+}

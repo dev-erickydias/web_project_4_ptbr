@@ -1,0 +1,12 @@
+.card {
+  background-color: #fff;
+  width: 282px;
+  height: 361px;
+  border-radius: 10px;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .card {
+    margin: 0 35px 0 0;
+  }
+}

@@ -1,0 +1,20 @@
+.cards {
+  color: #000;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  justify-items: center;
+  margin: 0 auto;
+  row-gap: 21px;
+  column-gap: 17px;
+  width: 880px;
+}
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+    width: 282px;
+    margin: 0 auto;
+  }
+}
