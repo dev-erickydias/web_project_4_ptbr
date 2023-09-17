@@ -28,7 +28,7 @@ const spanInputAddName = document.querySelector("#span-input-add-name");
 const spanInputAddImage = document.querySelector("#span-input-add-image");
 const spanInputJob = document.querySelector("#span-input-job");
 const spanInputName = document.querySelector("#span-input-name");
-
+const form = document.querySelector(".form__edit")
 // array com os cards que serão adicionados a ul7
 const initialCards = [
   {
@@ -60,22 +60,12 @@ const initialCards = [
 inputNome.value = profileTitle.textContent;
 inputJob.value = profileSubtitle.textContent;
 
-// evento de click no botao de editar o perfil
-profileButton.addEventListener("click", () => {
-  popupUserForm.classList.add("popup_opened");
-  // fechar o popup com a tecla esc
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      popupUserForm.classList.remove("popup_opened");
-      popupCardForm.classList.remove("popup_opened");
-      popupImage.classList.remove("popup_opened");
-    }
-  });
-});
 
-// evento de click no botao de adicionar
-addButton.addEventListener("click", () => {
-  popupCardForm.classList.add("popup_opened");
+
+function abrirEditPopup () {
+  popupUserForm.classList.add("popup_opened");
+  submitForm.disabled = true;
+  submitForm.classList.add("disability")
   // fechar o popup com a tecla esc
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
@@ -84,7 +74,25 @@ addButton.addEventListener("click", () => {
       popupImage.classList.remove("popup_opened");
     }
   });
-});
+}
+// evento de click no botao de editar o perfil
+profileButton.addEventListener("click", abrirEditPopup);
+
+function abrirAddPopup () {
+  popupCardForm.classList.add("popup_opened");
+  addSubmit.disabled = true;
+  addSubmit.classList.add("disability")
+  // fechar o popup com a tecla esc
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      popupUserForm.classList.remove("popup_opened");
+      popupCardForm.classList.remove("popup_opened");
+      popupImage.classList.remove("popup_opened");
+    }
+  })
+}
+// evento de click no botao de adicionar
+addButton.addEventListener("click", abrirAddPopup);
 
 // função de crear cards
 function createCard(card) {
@@ -123,7 +131,6 @@ popupCardForm.addEventListener("submit", (event) => {
     link: addInputImage.value,
   };
   createCard(cardsitem);
-  console.log(popupCardForm);
 
   addFormFirst.reset();
 });

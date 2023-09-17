@@ -51,7 +51,7 @@
     <div class="popup" id="popup-user-form">
       <div class="overlay"></div>
 
-      <form>
+      <form class="form__edit">
         <div class="popup__form-itens">
           <div class="popup__form-close">
             <img src="./image/Close__Icon.png" alt="Botão que feixa a caixa de edição">
@@ -60,12 +60,12 @@
 
           <div class="form__input-container">
             <input  required type="text"  minlength="2" maxlength="40" name="nome" id="nome" class="form__input popup__form-name">
-            <span class="form__error" id="span-input-name">Preencha esse campo.</span>
+            <span class="form__error" id="span-input-name"></span>
           </div>
 
           <div class="form__input-container">
             <input  required type="text" name="job" id="job" class="form__input popup__form-job" minlength="2" maxlength="200">
-            <span class="form__error" id="span-input-job" >Preencha esse campo.</span>
+            <span class="form__error" id="span-input-job"></span>
           </div>
 
           <button id="button__submit" class="button-submit disability" type="submit">Salvar</button>
