@@ -24,11 +24,15 @@ const overlay = document.querySelector(".overlay")
 const overlayAdd = document.querySelector("#overlay-add")
 const overlayImage = document.querySelector("#overlay-image")
 const addFormFirst = document.querySelector("#first")
+const spanInputAddName = document.querySelector("#span-input-add-name")
+const spanInputAddImage = document.querySelector("#span-input-add-image")
+const spanInputJob = document.querySelector("#span-input-job")
+const spanInputName = document.querySelector("#span-input-name")
+
+
+
+
 // array com os cards que serão adicionados a ul7
-
-
-
-
 const initialCards = [
   {
     name: "Vale de Yosemite",

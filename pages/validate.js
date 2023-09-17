@@ -1,36 +1,39 @@
-// Função para desativar os Botões
-function desativarButton() {
-  submitForm.disabled = true;
-}
-desativarButton();
-
-// Função de Validação e add o ativado ao Input Name 
-function validar() {
-  inputNome.classList.add("active");
-}
-// Função de Validação Que renove a Desativação
-function validarRemove() {
-  inputNome.classList.remove("active");
-}
-
-// Validação do Formulario edit
-function pegarValor(event) {
-
-  if ((inputNome.value.length >= 2 && inputNome.value.length <= 40) && (inputJob.value.length >= 2 && inputJob.value.length <= 200)) {
-    // return true
-    submitForm.disabled = false;
-    return validarRemove();
-  } else {
-    //return false
-    submitForm.disabled = true;
-    return validar();
-  }
+// Valide todas as configurações
+function enableValidation() {
+const inputs = document.querySelectorAll(config.inputSelector)
+inputs.forEach(function(input) {
+    input.addEventListener("input", function (event) {
+        const inputElement = event.target;
+        const errorElement = inputElement
+          .closest(".form__input-container")
+          .querySelector(config.errorSelector);
+        if (inputElement.validity.valid) {
+          hideInputError(errorElement);
+        } else {
+          showInputError(errorElement, inputElement.validationMessage);
+        }
+      });  
+});
 
 }
-inputNome.addEventListener("input", pegarValor);
-inputJob.addEventListener("input", pegarValor);
 
-// Validação do Formulario de ADD
-// addInputName e addInputImagem
+function hideInputError(errorElement) {
+  errorElement.classList.remove("form__error_active");
+}
 
-// so preciso checar se tem http e https 
+function showInputError(errorElement, message) {
+  errorElement.classList.add("form__error_active");
+  errorElement.textContent = message;
+}
+const config = {
+    formSelector: ".popup",
+    inputSelector: ".form__input",
+    submitButtonSelector: ".button",
+    inactiveButtonClass: "popup__button_disabled",
+    inputErrorClass: "popup__input_type_error",
+    errorClass: "popup__error_visible",
+    errorSelector: ".form__error"
+}
+
+enableValidation(config); 
+

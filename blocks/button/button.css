@@ -9,6 +9,13 @@
   justify-items: center;
   justify-content: center;
 }
+
+
+.disability {
+  background-color: #fff;
+  color: #ccc; 
+}
+
 @media (max-width: 768px) {
   .button {
     width: 282px;

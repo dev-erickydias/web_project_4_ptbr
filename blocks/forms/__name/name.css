@@ -5,6 +5,14 @@
   border-bottom: 1px solid #000;
   margin: 54px 36px 0;
 }
+
+input:valid {
+  border-color: green;
+}
+
+input:invalid {
+  border-color: red;
+}
 @media (max-width: 768px) {
   .popup__form-name {
     width: 238px;
