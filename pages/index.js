@@ -20,17 +20,14 @@ const addSubmit = popupCardForm.querySelector("#add__submit");
 const cards = document.querySelector(".cards");
 const popupImage = document.querySelector("#popup-image");
 const imgClose = popupImage.querySelector(".close-image");
-const overlay = document.querySelector(".overlay")
-const overlayAdd = document.querySelector("#overlay-add")
-const overlayImage = document.querySelector("#overlay-image")
-const addFormFirst = document.querySelector("#first")
-const spanInputAddName = document.querySelector("#span-input-add-name")
-const spanInputAddImage = document.querySelector("#span-input-add-image")
-const spanInputJob = document.querySelector("#span-input-job")
-const spanInputName = document.querySelector("#span-input-name")
-
-
-
+const overlay = document.querySelector(".overlay");
+const overlayAdd = document.querySelector("#overlay-add");
+const overlayImage = document.querySelector("#overlay-image");
+const addFormFirst = document.querySelector("#first");
+const spanInputAddName = document.querySelector("#span-input-add-name");
+const spanInputAddImage = document.querySelector("#span-input-add-image");
+const spanInputJob = document.querySelector("#span-input-job");
+const spanInputName = document.querySelector("#span-input-name");
 
 // array com os cards que serão adicionados a ul7
 const initialCards = [
@@ -66,11 +63,27 @@ inputJob.value = profileSubtitle.textContent;
 // evento de click no botao de editar o perfil
 profileButton.addEventListener("click", () => {
   popupUserForm.classList.add("popup_opened");
+  // fechar o popup com a tecla esc
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      popupUserForm.classList.remove("popup_opened");
+      popupCardForm.classList.remove("popup_opened");
+      popupImage.classList.remove("popup_opened");
+    }
+  });
 });
 
 // evento de click no botao de adicionar
 addButton.addEventListener("click", () => {
   popupCardForm.classList.add("popup_opened");
+  // fechar o popup com a tecla esc
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      popupUserForm.classList.remove("popup_opened");
+      popupCardForm.classList.remove("popup_opened");
+      popupImage.classList.remove("popup_opened");
+    }
+  });
 });
 
 // função de crear cards
@@ -110,9 +123,9 @@ popupCardForm.addEventListener("submit", (event) => {
     link: addInputImage.value,
   };
   createCard(cardsitem);
-  console.log(popupCardForm)
+  console.log(popupCardForm);
 
-  addFormFirst.reset()
+  addFormFirst.reset();
 });
 
 // Aqui irei programar para ele fechar com click no X e no submit do botao add e do botão edit
@@ -168,25 +181,13 @@ cards.addEventListener("click", (event) => {
   }
 });
 
-
-
-
-// fechar o popup com a tecla esc 
-document.addEventListener("keydown", (event)=> {
-  if (event.key === "Escape") {
-    popupUserForm.classList.remove("popup_opened");
-    popupCardForm.classList.remove("popup_opened");
-    popupImage.classList.remove("popup_opened");
-  }
-})
-
 // fechar o popup precionando Fora dele
-overlay.addEventListener("click", ()=> {
+overlay.addEventListener("click", () => {
   popupUserForm.classList.remove("popup_opened");
-})
-overlayAdd.addEventListener("click", ()=> {
+});
+overlayAdd.addEventListener("click", () => {
   popupCardForm.classList.remove("popup_opened");
-})
+});
 overlayImage.addEventListener("click", () => {
   popupImage.classList.remove("popup_opened");
-})
+});

@@ -12,8 +12,10 @@
 
 
 .disability {
-  background-color: #fff;
-  color: #ccc; 
+  background: #fff;
+  cursor: not-allowed;
+  opacity: 20%;
+  color: black;
 }
 
 @media (max-width: 768px) {
