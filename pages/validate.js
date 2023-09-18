@@ -28,7 +28,7 @@ function enableValidation(event) {
         var inputTwo = inputs[1]
       }
       const inputElement = event.target;
-      const errorElement = inputElement.closest(".form__input-container").querySelector(config.errorSelector);
+      const errorElement = inputElement.closest(".popup__form-inputs").querySelector(config.errorSelector);
 
       if (inputOne.validity.valid && inputTwo.validity.valid) {
         hideInputError(errorElement);
@@ -52,12 +52,12 @@ function showInputError(errorElement, message) {
 
 const config = {
   formSelector: ".popup",
-  inputSelector: ".form__input",
+  inputSelector: ".popup__form-input",
   submitButtonSelector: ".button",
   inactiveButtonClass: ".disability",
   inputErrorClass: "popup__input_type_error",
   errorClass: "popup__error_visible",
-  errorSelector: ".form__error",
+  errorSelector: ".popup__form",
 };
 
 enableValidation(config);
