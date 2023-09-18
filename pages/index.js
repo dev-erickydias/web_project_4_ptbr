@@ -14,7 +14,7 @@ const submitForm = document.querySelector("#button__submit");
 const addButton = document.querySelector(".profile__button-add");
 const popupCardForm = document.querySelector("#popup-card-form");
 const addClose = popupCardForm.querySelector("#close-add");
-const addInputName = popupCardForm.querySelector("#input__name");
+const addInputName = popupCardForm.querySelector("#input__title");
 const addInputImage = popupCardForm.querySelector("#input__image");
 const addSubmit = popupCardForm.querySelector("#add__submit");
 const cards = document.querySelector(".cards");
@@ -28,7 +28,7 @@ const spanInputAddName = document.querySelector("#span-input-add-name");
 const spanInputAddImage = document.querySelector("#span-input-add-image");
 const spanInputJob = document.querySelector("#span-input-job");
 const spanInputName = document.querySelector("#span-input-name");
-const form = document.querySelector(".form__edit")
+const form = document.querySelector(".form__edit");
 // array com os cards que serão adicionados a ul7
 const initialCards = [
   {
@@ -60,12 +60,10 @@ const initialCards = [
 inputNome.value = profileTitle.textContent;
 inputJob.value = profileSubtitle.textContent;
 
-
-
-function abrirEditPopup () {
+function abrirEditPopup() {
   popupUserForm.classList.add("popup_opened");
   submitForm.disabled = true;
-  submitForm.classList.add("disability")
+  submitForm.classList.add("disability");
   // fechar o popup com a tecla esc
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
@@ -78,10 +76,10 @@ function abrirEditPopup () {
 // evento de click no botao de editar o perfil
 profileButton.addEventListener("click", abrirEditPopup);
 
-function abrirAddPopup () {
+function abrirAddPopup() {
   popupCardForm.classList.add("popup_opened");
   addSubmit.disabled = true;
-  addSubmit.classList.add("disability")
+  addSubmit.classList.add("disability");
   // fechar o popup com a tecla esc
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
@@ -89,7 +87,7 @@ function abrirAddPopup () {
       popupCardForm.classList.remove("popup_opened");
       popupImage.classList.remove("popup_opened");
     }
-  })
+  });
 }
 // evento de click no botao de adicionar
 addButton.addEventListener("click", abrirAddPopup);
@@ -165,15 +163,14 @@ function removeCardElement(event) {
   }
 }
 
-// Adicionei um evento de clique a cada botão de remoção de card passando a função removeCardElement
-cards.addEventListener("click", (event) => {
+function deleteCard (event) {
   if (event.target.classList.contains("del")) {
     removeCardElement(event);
   }
-});
+}
+cards.addEventListener("click", deleteCard);
 
-// interação com o botao de lick
-cards.addEventListener("click", (event) => {
+function lickImage(event) {
   if (event.target.classList.contains("card__unlick")) {
     const cardUnlick = event.target;
     const isLiked = cardUnlick.getAttribute("data-liked") === "true";
@@ -186,7 +183,9 @@ cards.addEventListener("click", (event) => {
       cardUnlick.setAttribute("data-liked", "true");
     }
   }
-});
+}
+// interação com o botao de lick
+cards.addEventListener("click", lickImage);
 
 // fechar o popup precionando Fora dele
 overlay.addEventListener("click", () => {

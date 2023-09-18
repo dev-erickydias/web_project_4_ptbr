@@ -1,31 +1,41 @@
 function desativarButton() {
   submitForm.disabled = true;
-  submitForm.classList.add("disability")
+  submitForm.classList.add("disability");
   addSubmit.disabled = true;
-  addSubmit.classList.add("disability")
+  addSubmit.classList.add("disability");
 }
 desativarButton();
 
 function ativarButton() {
-    submitForm.disabled = false;
-    submitForm.classList.remove("disability")
-    addSubmit.disabled = false;
-    addSubmit.classList.remove("disability")
-  }
+  submitForm.disabled = false;
+  submitForm.classList.remove("disability");
+  addSubmit.disabled = false;
+  addSubmit.classList.remove("disability");
+}
 
 // Valide todas as configurações
-function enableValidation() {
+function enableValidation(event) {
   const inputs = document.querySelectorAll(config.inputSelector);
-  inputs.forEach(function (input) {
-    input.addEventListener("input", function (event) {
+  
+  inputs.forEach((element) => {
+    element.addEventListener("input", (event) => {
+      let id = event.target.id
+      if (id == "input__title" || id == "input__image") {
+        var inputOne = inputs[2]
+        var inputTwo = inputs[3]
+      } else {
+        var inputOne = inputs[0]
+        var inputTwo = inputs[1]
+      }
       const inputElement = event.target;
       const errorElement = inputElement.closest(".form__input-container").querySelector(config.errorSelector);
-      if (inputElement.validity.valid) {
+
+      if (inputOne.validity.valid && inputTwo.validity.valid) {
         hideInputError(errorElement);
-        ativarButton()
+        ativarButton();
       } else {
         showInputError(errorElement, inputElement.validationMessage);
-        desativarButton()
+        desativarButton();
       }
     });
   });
@@ -44,7 +54,7 @@ const config = {
   formSelector: ".popup",
   inputSelector: ".form__input",
   submitButtonSelector: ".button",
-  inactiveButtonClass: "popup__button_disabled",
+  inactiveButtonClass: ".disability",
   inputErrorClass: "popup__input_type_error",
   errorClass: "popup__error_visible",
   errorSelector: ".form__error",
