@@ -19,7 +19,7 @@ function enableValidation(event) {
   
   inputs.forEach((element) => {
     element.addEventListener("input", (event) => {
-      let id = event.target.id
+      const id = event.target.id
       if (id == "input__title" || id == "input__image") {
         var inputOne = inputs[2]
         var inputTwo = inputs[3]

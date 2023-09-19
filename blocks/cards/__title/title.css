@@ -1,9 +1,12 @@
 .card__title {
     margin: 25px auto 31px;
-    width: 246px;
-    height: 23px;
+    width: 200px;
+    height: 30px;
     font-size: 24px;
     font-weight: 900;
     line-height: 29px;
     text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }

@@ -25,9 +25,14 @@ const overlayAdd = document.querySelector("#overlay-add");
 const overlayImage = document.querySelector("#overlay-image");
 const addFormFirst = document.querySelector("#first");
 const form = document.querySelector(".popup__form_edit");
+const abrir = document.querySelectorAll(".abrir");
 // array com os cards que serão adicionados a ul7
 const initialCards = [
   {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
+  },
+    {
     name: "Vale de Yosemite",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
   },
@@ -47,46 +52,31 @@ const initialCards = [
     name: "Vanois National...",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
   },
-  {
-    name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
-  },
+
 ];
 // adicionando o valor dos inputs nos titulos
 inputNome.value = profileTitle.textContent;
 inputJob.value = profileSubtitle.textContent;
 
-function abrirEditPopup() {
-  popupUserForm.classList.add("popup_opened");
-  submitForm.disabled = true;
-  submitForm.classList.add("disability");
-  // fechar o popup com a tecla esc
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      popupUserForm.classList.remove("popup_opened");
-      popupCardForm.classList.remove("popup_opened");
-      popupImage.classList.remove("popup_opened");
-    }
-  });
-}
-// evento de click no botao de editar o perfil
-profileButton.addEventListener("click", abrirEditPopup);
 
-function abrirAddPopup() {
-  popupCardForm.classList.add("popup_opened");
-  addSubmit.disabled = true;
-  addSubmit.classList.add("disability");
-  // fechar o popup com a tecla esc
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      popupUserForm.classList.remove("popup_opened");
-      popupCardForm.classList.remove("popup_opened");
-      popupImage.classList.remove("popup_opened");
-    }
-  });
+const fecharComEsc = (event) => {
+  if (event.key === "Escape") {
+    popupUserForm.classList.remove("popup_opened");
+    popupCardForm.classList.remove("popup_opened");
+    popupImage.classList.remove("popup_opened");
+  }
 }
-// evento de click no botao de adicionar
-addButton.addEventListener("click", abrirAddPopup);
+abrir.forEach((e,i)=> {
+  e.addEventListener("click", ()=> {
+    if (i == 0) {
+      return popupUserForm.classList.add("popup_opened");
+    } else {
+      return popupCardForm.classList.add("popup_opened")
+    }
+  })
+})
+document.addEventListener("keydown", fecharComEsc);
+// profileButton.addEventListener("click", abrirEditPopup);
 
 // função de crear cards
 function createCard(card) {
@@ -101,7 +91,7 @@ function createCard(card) {
   cardImage.alt = card.name;
 
   const cardList = cardElement.querySelector(".card");
-  cards.append(cardList);
+  cards.prepend(cardList);
 
   cardImage.addEventListener("click", (event) => {
     popupImage.classList.add("popup_opened");
@@ -109,13 +99,6 @@ function createCard(card) {
     popupImage.append(cardImage.cloneNode(true));
   });
 }
-
-// evento de submit no botão de salvar o formulario
-popupUserForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  profileTitle.textContent = inputNome.value;
-  profileSubtitle.textContent = inputJob.value;
-});
 
 popupCardForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -128,6 +111,15 @@ popupCardForm.addEventListener("submit", (event) => {
 
   addFormFirst.reset();
 });
+
+// evento de submit no botão de salvar o formulario
+popupUserForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  profileTitle.textContent = inputNome.value;
+  profileSubtitle.textContent = inputJob.value;
+});
+
+
 
 // Aqui irei programar para ele fechar com click no X e no submit do botao add e do botão edit
 formClose.addEventListener("click", () => {
@@ -159,7 +151,7 @@ function removeCardElement(event) {
   }
 }
 
-function deleteCard (event) {
+function deleteCard(event) {
   if (event.target.classList.contains("del")) {
     removeCardElement(event);
   }

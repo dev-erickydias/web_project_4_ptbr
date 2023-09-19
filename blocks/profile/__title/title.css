@@ -1,4 +1,6 @@
 .profile__title {
+  width: 100%;
+  max-width: 410px;
   font-size: 42px;
   font-weight: 500;
   line-height: 48px;
