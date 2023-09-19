@@ -29,14 +29,10 @@ const abrir = document.querySelectorAll(".abrir");
 // array com os cards que serão adicionados a ul7
 const initialCards = [
   {
-    name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
-  },
-    {
     name: "Vale de Yosemite",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
   },
-  {
+    {
     name: "Lago Louise",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
   },
@@ -48,24 +44,45 @@ const initialCards = [
     name: "Latemar",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
   },
+
   {
     name: "Vanois National...",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
   },
-
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
+  },
 ];
 // adicionando o valor dos inputs nos titulos
 inputNome.value = profileTitle.textContent;
 inputJob.value = profileSubtitle.textContent;
 
 
-const fecharComEsc = (event) => {
+const fecharComEsc = (event, popup) => {
   if (event.key === "Escape") {
-    popupUserForm.classList.remove("popup_opened");
-    popupCardForm.classList.remove("popup_opened");
-    popupImage.classList.remove("popup_opened");
+  popup.classList.remove("popup_opened")
   }
+  document.removeEventListener("keydown", (event) => {
+    fecharComEsc(event, popup)
+  })
 }
+
+function abrirPopup (popup) {
+  popup.classList.add("popup_opened")
+  document.addEventListener("keydown", (event) => {
+    fecharComEsc(event, popup)
+  })
+}
+
+profileButton.addEventListener("click", () => {
+  abrirPopup(popupUserForm)
+})
+addButton.addEventListener("click", () => {
+  abrirPopup(popupCardForm)
+})
+
+/*
 abrir.forEach((e,i)=> {
   e.addEventListener("click", ()=> {
     if (i == 0) {
@@ -74,8 +91,8 @@ abrir.forEach((e,i)=> {
       return popupCardForm.classList.add("popup_opened")
     }
   })
-})
-document.addEventListener("keydown", fecharComEsc);
+}) */
+// document.addEventListener("keydown", fecharComEsc);
 // profileButton.addEventListener("click", abrirEditPopup);
 
 // função de crear cards
@@ -94,7 +111,7 @@ function createCard(card) {
   cards.prepend(cardList);
 
   cardImage.addEventListener("click", (event) => {
-    popupImage.classList.add("popup_opened");
+    abrirPopup(popupImage)
     popupImage.querySelector(".card__image")?.remove();
     popupImage.append(cardImage.cloneNode(true));
   });
