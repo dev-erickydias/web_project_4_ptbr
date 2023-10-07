@@ -1,10 +1,13 @@
-//Aqui é a Programação do Button de edição do perfil.
+// array com os cards que serão adicionados a ul7
+import { initialCards } from "./initialCards.js"
+
+// crear cards
+import Card from "./Card.js"
+
 
 //Parte de fazer o pupup abrir, alem de fazer tudo o que for editado ficar na tela.
 const profileButton = document.querySelector(".profile__button");
 const popupUserForm = document.querySelector("#popup-user-form");
-const formEdit = document.querySelector(".popup__form-itens");
-const formAdd = document.querySelector("#form__itens");
 const profileTitle = document.querySelector(".profile__title");
 const profileSubtitle = document.querySelector(".profile__subtitle");
 const inputNome = document.querySelector(".popup__form-name");
@@ -18,42 +21,24 @@ const addInputName = popupCardForm.querySelector("#input__title");
 const addInputImage = popupCardForm.querySelector("#input__image");
 const addSubmit = popupCardForm.querySelector("#add__submit");
 const cards = document.querySelector(".cards");
-const popupImage = document.querySelector("#popup-image");
+const popupImage = document.querySelector("#popupcard");
 const imgClose = popupImage.querySelector(".close-image");
 const overlay = document.querySelector(".overlay");
 const overlayAdd = document.querySelector("#overlay-add");
 const overlayImage = document.querySelector("#overlay-image");
 const addFormFirst = document.querySelector("#first");
-const form = document.querySelector(".popup__form_edit");
-const abrir = document.querySelectorAll(".abrir");
-// array com os cards que serão adicionados a ul7
-const initialCards = [
-  {
-    name: "Vale de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
-  },
-    {
-    name: "Lago Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
-  },
-  {
-    name: "Montanhas Carecas",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
-  },
-  {
-    name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
-  },
 
-  {
-    name: "Vanois National...",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
-  },
-];
+window.addEventListener("load", () => {
+  const cardArr = initialCards.map((data) => new Card(data, "#template"));
+  cardArr.forEach((card) => {
+  const cardElement =  card.generateCard()
+  cards.append(cardElement)
+  })
+});
+
+
+
+
 // adicionando o valor dos inputs nos titulos
 inputNome.value = profileTitle.textContent;
 inputJob.value = profileSubtitle.textContent;
@@ -82,41 +67,6 @@ addButton.addEventListener("click", () => {
   abrirPopup(popupCardForm)
 })
 
-/*
-abrir.forEach((e,i)=> {
-  e.addEventListener("click", ()=> {
-    if (i == 0) {
-      return popupUserForm.classList.add("popup_opened");
-    } else {
-      return popupCardForm.classList.add("popup_opened")
-    }
-  })
-}) */
-// document.addEventListener("keydown", fecharComEsc);
-// profileButton.addEventListener("click", abrirEditPopup);
-
-// função de crear cards
-function createCard(card) {
-  const cardTemplate = document.querySelector("#template");
-  const cardElement = cardTemplate.content.cloneNode(true);
-  const cards = document.querySelector(".cards");
-  const cardName = cardElement.querySelector(".card__title");
-  const cardImage = cardElement.querySelector(".card__image");
-
-  cardName.textContent = card.name;
-  cardImage.src = card.link;
-  cardImage.alt = card.name;
-
-  const cardList = cardElement.querySelector(".card");
-  cards.prepend(cardList);
-
-  cardImage.addEventListener("click", (event) => {
-    abrirPopup(popupImage)
-    popupImage.querySelector(".card__image")?.remove();
-    popupImage.append(cardImage.cloneNode(true));
-  });
-}
-
 popupCardForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -124,7 +74,11 @@ popupCardForm.addEventListener("submit", (event) => {
     name: addInputName.value,
     link: addInputImage.value,
   };
-  createCard(cardsitem);
+
+  const newCard = new Card(cardsitem, "#template")
+  const cardElement =  newCard.generateCard()
+  cards.append(cardElement)
+
 
   addFormFirst.reset();
 });
@@ -156,9 +110,7 @@ imgClose.addEventListener("click", () => {
   popupImage.classList.remove("popup_opened");
 });
 
-window.addEventListener("load", () => {
-  initialCards.forEach(createCard);
-});
+
 
 // adicionando a funcao de remover os card
 function removeCardElement(event) {
