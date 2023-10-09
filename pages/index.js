@@ -1,6 +1,9 @@
 // array com os cards que serão adicionados a ul7
 import { initialCards } from "./initialCards.js"
 
+// FormValidate Class
+import FormValidator from "./FormValidator.js";
+
 // crear cards
 import Card from "./Card.js"
 
