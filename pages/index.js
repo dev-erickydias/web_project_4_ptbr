@@ -9,6 +9,7 @@ import Card from "./Card.js"
 
 
 //Parte de fazer o pupup abrir, alem de fazer tudo o que for editado ficar na tela.
+
 const profileButton = document.querySelector(".profile__button");
 const popupUserForm = document.querySelector("#popup-user-form");
 const profileTitle = document.querySelector(".profile__title");
@@ -32,13 +33,14 @@ const overlayImage = document.querySelector("#overlay-image");
 const addFormFirst = document.querySelector("#first");
 
 window.addEventListener("load", () => {
-  const cardArr = initialCards.map((data) => new Card(data, "#template"));
+  const cardArr = initialCards.map((data) => new Card(data, "#template", openPopupWithImage));
   cardArr.forEach((card) => {
   const cardElement =  card.generateCard()
   cards.append(cardElement)
   })
 });
-
+new FormValidator(".popup__form-edit", " ").generateValidate()
+new FormValidator("#first", " ").generateValidate()
 
 
 
@@ -62,7 +64,13 @@ function abrirPopup (popup) {
     fecharComEsc(event, popup)
   })
 }
-
+function openPopupWithImage (image) {
+  popupImage.classList.add("popup_opened")
+  document.addEventListener("keydown", (event) => {
+    fecharComEsc(event, popupImage)
+  })
+  popupImage.querySelector(".card__image").src = image
+}
 profileButton.addEventListener("click", () => {
   abrirPopup(popupUserForm)
 })
@@ -78,9 +86,9 @@ popupCardForm.addEventListener("submit", (event) => {
     link: addInputImage.value,
   };
 
-  const newCard = new Card(cardsitem, "#template")
+  const newCard = new Card(cardsitem, "#template", openPopupWithImage)
   const cardElement =  newCard.generateCard()
-  cards.append(cardElement)
+  cards.prepend(cardElement)
 
 
   addFormFirst.reset();

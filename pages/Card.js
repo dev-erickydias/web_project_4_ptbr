@@ -1,12 +1,10 @@
-const popupElement = document.querySelector("#popupcard")
-const popupImage = document.querySelector("#popup-image");
-const popupCloseButton = popupElement.querySelector(".close-image");
 
 export default class Card {
-  constructor(data, cardSelector) {
+  constructor(data, cardSelector, handleImagePopup, ) {
     this._cardSelector = cardSelector
     this._title = data.name;
     this._image = data.link;
+    this._abrirPopupComImage = handleImagePopup
   }
 
   _getTemplate() {
@@ -19,23 +17,9 @@ export default class Card {
     return cardElement;
   }
 
-  _handleOpenPopup() {
-    popupImage.src = this._image;
-    popupElement.classList.add("popup_opened");
-  }
-
-  _handleClosePopup() {
-    popupImage.src = "";
-    popupElement.classList.remove("popup_opened");
-  }
-
   _setEventListeners() {
-    this._element.addEventListener("click", () => {
-      this._handleOpenPopup();
-    });
-
-    popupCloseButton.addEventListener("click", () => {
-      this._handleClosePopup();
+    this._element.querySelector(".card__image").addEventListener("click", () => {
+      this._abrirPopupComImage(this._image);
     });
   }
   generateCard() {
