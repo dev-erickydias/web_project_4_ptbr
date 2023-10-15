@@ -165,3 +165,4 @@ overlayAdd.addEventListener("click", () => {
 overlayImage.addEventListener("click", () => {
   popupImage.classList.remove("popup_opened");
 });
+
