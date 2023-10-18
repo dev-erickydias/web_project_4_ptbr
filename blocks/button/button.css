@@ -17,7 +17,12 @@
   opacity: 20%;
   color: black;
 }
-
+.disability:disabled {
+  background: #fff;
+  cursor: not-allowed;
+  opacity: 20%;
+  color: black;
+}
 @media (max-width: 768px) {
   .button {
     width: 282px;
