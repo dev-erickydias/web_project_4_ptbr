@@ -5,8 +5,9 @@ import { initialCards } from "./initialCards.js"
 import FormValidator from "./FormValidator.js";
 
 // crear cards
-import Card from "./Card.js"
+import Card from "./Card.js";
 import { fecharComEsc } from './utils.js';
+import { abrirPopup } from './utils.js';
 
 
 //Parte de fazer o pupup abrir, alem de fazer tudo o que for editado ficar na tela.
@@ -54,15 +55,6 @@ new FormValidator(editForm, submitForm, configFormValidate, configSpanValidate).
 inputNome.value = profileTitle.textContent;
 inputJob.value = profileSubtitle.textContent;
 
-
-
-
-function abrirPopup (popup) {
-  popup.classList.add("popup_opened")
-  document.addEventListener("keydown", (event) => {
-    fecharComEsc(event, popup)
-  })
-}
 function openPopupWithImage (image) {
   popupImage.classList.add("popup_opened")
   document.addEventListener("keydown", (event) => {

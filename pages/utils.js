@@ -8,3 +8,13 @@ const fecharComEsc = (event, popup) => {
   })
 }
 export {fecharComEsc};
+
+
+
+const abrirPopup = (popup) => {
+  popup.classList.add("popup_opened")
+  document.addEventListener("keydown", (event) => {
+    fecharComEsc(event, popup)
+  })
+}
+export { abrirPopup };
