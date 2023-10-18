@@ -31,6 +31,8 @@ const overlay = document.querySelector(".overlay");
 const overlayAdd = document.querySelector("#overlay-add");
 const overlayImage = document.querySelector("#overlay-image");
 const addFormFirst = document.querySelector("#first");
+const editForm = document.querySelector(".popup__form-edit");
+
 
 window.addEventListener("load", () => {
   const cardArr = initialCards.map((data) => new Card(data, "#template", openPopupWithImage));
@@ -39,9 +41,12 @@ window.addEventListener("load", () => {
   cards.append(cardElement)
   })
 });
-new FormValidator(".popup__form-edit", " ").generateValidate()
-new FormValidator("#first", " ").generateValidate()
-
+const configFormValidate = {inputErrorClass:"popup__form_theme__red", buttonErrorClass: "disability"}
+const configSpanValidate = { spanErrorClass: "form__error_active"}
+new FormValidator(addFormFirst, addSubmit, configFormValidate, configSpanValidate).enableValidation()
+new FormValidator(editForm, submitForm, configFormValidate, configSpanValidate).enableValidation()
+//new FormValidator("#first", " ")._enableValidation()
+//console.log(profileButton)
 
 
 // adicionando o valor dos inputs nos titulos
@@ -73,6 +78,7 @@ function openPopupWithImage (image) {
 }
 profileButton.addEventListener("click", () => {
   abrirPopup(popupUserForm)
+  console.log("clicou")
 })
 addButton.addEventListener("click", () => {
   abrirPopup(popupCardForm)

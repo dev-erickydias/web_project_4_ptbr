@@ -56,7 +56,7 @@ const config = {
   submitButtonSelector: ".button",
   inactiveButtonClass: ".disability",
   inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_visible",
+  errorClass: "form__error_active",
   errorSelector: ".popup__form",
 };
 

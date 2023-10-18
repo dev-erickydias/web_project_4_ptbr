@@ -1,4 +1,3 @@
-
 export default class Card {
   constructor(data, cardSelector, handleImagePopup, ) {
     this._cardSelector = cardSelector
