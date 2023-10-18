@@ -11,7 +11,6 @@ export default class FormValidator {
   // ".popup__form-edit", " "
   _checkInputValidity(inputElement) {
     const isValid = inputElement.validity.valid;
-    console.log(inputElement);
     if (!isValid) {
       inputElement.classList.add(this.config.inputErrorClass);
     } else {

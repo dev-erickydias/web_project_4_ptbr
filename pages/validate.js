@@ -1,3 +1,4 @@
+/*
 function desativarButton() {
   submitForm.disabled = true;
   submitForm.classList.add("disability");
@@ -61,3 +62,4 @@ const config = {
 };
 
 enableValidation(config);
+*/

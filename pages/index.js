@@ -6,6 +6,7 @@ import FormValidator from "./FormValidator.js";
 
 // crear cards
 import Card from "./Card.js"
+import { fecharComEsc } from './utils.js';
 
 
 //Parte de fazer o pupup abrir, alem de fazer tudo o que for editado ficar na tela.
@@ -46,7 +47,7 @@ const configSpanValidate = { spanErrorClass: "form__error_active"}
 new FormValidator(addFormFirst, addSubmit, configFormValidate, configSpanValidate).enableValidation()
 new FormValidator(editForm, submitForm, configFormValidate, configSpanValidate).enableValidation()
 //new FormValidator("#first", " ")._enableValidation()
-//console.log(profileButton)
+
 
 
 // adicionando o valor dos inputs nos titulos
@@ -54,14 +55,7 @@ inputNome.value = profileTitle.textContent;
 inputJob.value = profileSubtitle.textContent;
 
 
-const fecharComEsc = (event, popup) => {
-  if (event.key === "Escape") {
-  popup.classList.remove("popup_opened")
-  }
-  document.removeEventListener("keydown", (event) => {
-    fecharComEsc(event, popup)
-  })
-}
+
 
 function abrirPopup (popup) {
   popup.classList.add("popup_opened")
@@ -78,7 +72,6 @@ function openPopupWithImage (image) {
 }
 profileButton.addEventListener("click", () => {
   abrirPopup(popupUserForm)
-  console.log("clicou")
 })
 addButton.addEventListener("click", () => {
   abrirPopup(popupCardForm)
