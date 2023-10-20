@@ -5,10 +5,7 @@ export default class FormValidator {
     this.formElement = formElement;
     this.inputList = Array.from(formElement.querySelectorAll('input'));
     this.spanList = Array.from(formElement.querySelectorAll('span'));
-    //  this.submitButton = this.formElement.querySelector(this.config.submitButtonSelector);
-    // this._setEventListeners();
   }
-  // ".popup__form-edit", " "
   _checkInputValidity(inputElement) {
     const isValid = inputElement.validity.valid;
     if (!isValid) {
@@ -30,15 +27,6 @@ export default class FormValidator {
       this.submitButton.classList.add(this.config.buttonErrorClass);
     }
   }
-
-  /*_setEventListeners() {
-    this.inputList.forEach((inputElement) => {
-      inputElement.addEventListener("input", () => {
-        this._checkInputValidity(inputElement);
-        this._toggleButtonState();
-      });
-    });
-  }*/
   _hideInputError(errorElement) {
     errorElement.classList.remove('form__error_active');
   }
@@ -56,6 +44,5 @@ export default class FormValidator {
         this._showInputError(inputElement.nextElementSibling, inputElement.validationMessage);
       });
     });
-    // acoplar o input ao span
   }
 }
