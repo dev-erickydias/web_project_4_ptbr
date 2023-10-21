@@ -60,7 +60,7 @@ function openPopupWithImage (image) {
   document.addEventListener("keydown", (event) => {
     fecharComEsc(event, popupImage)
   })
-  popupImage.querySelector(".card__image").src = image
+  popupImage.querySelector(".popup-container__image").src = image
 }
 profileButton.addEventListener("click", () => {
   abrirPopup(popupUserForm)
@@ -71,17 +71,13 @@ addButton.addEventListener("click", () => {
 
 popupCardForm.addEventListener("submit", (event) => {
   event.preventDefault();
-
   const cardsitem = {
     name: addInputName.value,
     link: addInputImage.value,
   };
-
   const newCard = new Card(cardsitem, "#template", openPopupWithImage)
   const cardElement =  newCard.generateCard()
   cards.prepend(cardElement)
-
-
   addFormFirst.reset();
 });
 
