@@ -3,7 +3,7 @@ export default class Card {
     this._cardSelector = cardSelector
     this._title = data.name;
     this._image = data.link;
-    this._abrirPopupComImage = handleImagePopup
+    this._openPopupWithImage = handleImagePopup
   }
 
   _getTemplate() {
@@ -13,7 +13,7 @@ export default class Card {
 
   _setEventListeners() {
     this._element.querySelector(".card__image").addEventListener("click", () => {
-      this._abrirPopupComImage(this._image);
+      this._openPopupWithImage(this._image);
     });
   }
   generateCard() {
