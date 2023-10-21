@@ -60,7 +60,7 @@ function openPopupWithImage (image) {
   document.addEventListener("keydown", (event) => {
     fecharComEsc(event, popupImage)
   })
-  popupImage.querySelector(".card__image").src = image
+  popupImage.querySelector(".popup-container__image").src = image
 }
 profileButton.addEventListener("click", () => {
   abrirPopup(popupUserForm)
