@@ -27,6 +27,7 @@ export default class FormValidator {
       this.submitButton.classList.add(this.config.buttonErrorClass);
     }
   }
+  
   _hideInputError(errorElement) {
     errorElement.classList.remove('form__error_active');
   }

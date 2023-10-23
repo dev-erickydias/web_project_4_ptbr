@@ -45,6 +45,7 @@ window.addEventListener("load", () => {
 });
 const configFormValidate = {inputErrorClass:"popup__form_theme__red", buttonErrorClass: "disability"}
 const configSpanValidate = { spanErrorClass: "form__error_active"}
+
 new FormValidator(addFormFirst, addSubmit, configFormValidate, configSpanValidate).enableValidation()
 new FormValidator(editForm, submitForm, configFormValidate, configSpanValidate).enableValidation()
 //new FormValidator("#first", " ")._enableValidation()
@@ -59,7 +60,7 @@ function openPopupWithImage (image) {
   popupImage.classList.add("popup_opened")
   document.addEventListener("keydown", (event) => {
     fecharComEsc(event, popupImage)
-  })
+  }) 
   popupImage.querySelector(".popup-container__image").src = image
 }
 profileButton.addEventListener("click", () => {
@@ -71,13 +72,17 @@ addButton.addEventListener("click", () => {
 
 popupCardForm.addEventListener("submit", (event) => {
   event.preventDefault();
+
   const cardsitem = {
     name: addInputName.value,
     link: addInputImage.value,
   };
+
   const newCard = new Card(cardsitem, "#template", openPopupWithImage)
   const cardElement =  newCard.generateCard()
   cards.prepend(cardElement)
+
+
   addFormFirst.reset();
 });
 
